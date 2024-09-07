@@ -11,4 +11,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "static_pages#top"
+  resources :quizzes, only: [:show] do
+    member do
+      post :check_answer
+      get :correct
+      get :incorrect
+    end
+  end
 end

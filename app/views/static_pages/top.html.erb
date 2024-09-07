@@ -1,1 +1,11 @@
-テスト
+<div class="top"></div>
+<div class="position-absolute top-50 start-50 translate-middle ">
+  <h1>この色は何色？</h1>
+  <div class="text-center">
+    <% if Quiz.first.present? %>
+      <%= link_to "スタート", quiz_path(Quiz.order("RANDOM()").first), class: "btn btn-primary" %>
+    <% else %>
+      クイズがありません
+    <% end %>
+  </div>
+</div>
