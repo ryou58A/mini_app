@@ -1,0 +1,25 @@
+<div class="position-absolute top-50 start-50 translate-middle ">
+  <%= @quiz.content %>
+  <div class="text-center">
+    image_tag "#{@quiz.color_image}.png", width: '200', height: '200'
+
+    <%= form_with url: check_answer_quiz_path(@quiz), method: :post do %>
+      <% @choices.each do |choice| %>
+        <div>
+          <label>
+            <%= radio_button_tag :choice_id, choice.id %>
+            <%= choice.content %>
+          </label>
+        </div>
+      <% end %>
+
+      <div>
+        <%= submit_tag "回答する" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-end">
+    <%= link_to "トップページへ", root_path %>
+  </div>
+</div>

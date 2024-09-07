@@ -1,0 +1,8 @@
+<div class="position-absolute top-50 start-50 translate-middle">
+  <div class=text-center>
+    <h1>正解です！</h1>
+    <p>次のクイズに進むにはリンクをクリックしてください。</p>
+
+    <%= link_to "次のクイズへ", quiz_path(Quiz.order("RANDOM()").first) %>
+  </div>
+</div>
