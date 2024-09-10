@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: [:show, :check_answer, :correct, :incorrect]
+  before_action :set_quiz, only: [ :show, :check_answer, :correct, :incorrect ]
 
   def show
     @choices = @quiz.choices.shuffle
